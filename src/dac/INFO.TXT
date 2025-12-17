@@ -1,0 +1,4 @@
+DAC stands for Download and Compile
+
+as it says, this folder contains code to download and follow the instructions
+of the compile.sh and runs it
