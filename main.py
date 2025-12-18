@@ -5,6 +5,7 @@ import sys
 import colorama
 import argparse
 from src.dac.download import download_pkg
+from src.dac.reinstall import reinstall
 from src.uninst.uninstall import remove_pkg
 
 colorama.init(autoreset=True)
@@ -44,6 +45,9 @@ install_parser.add_argument("package", help="Name of the package to install")
 remove_parser = subparsers.add_parser("remove", help="Remove a package")
 remove_parser.add_argument("package", help="Name of the package to remove")
 
+update_parser = subparsers.add_parser("update", help="Update a package")
+update_parser.add_argument("package", help="Name of the package to update")
+
 apkgupdate_parser = subparsers.add_parser("apkg-update", help="Update APKG")
 
 args = parser.parse_args()
@@ -56,3 +60,6 @@ if args.command == "install":
 
 if args.command == "remove":
     remove(args.package)
+
+if args.command == "update":
+    reinstall(args.package)
