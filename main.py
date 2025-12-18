@@ -29,6 +29,7 @@ def remove(package_name):
 # Argument parsing
 # -------------------------------
 parser = argparse.ArgumentParser(
+    prog="apkg",
     description="Source-based Package Manager",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )

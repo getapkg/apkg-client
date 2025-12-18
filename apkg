@@ -1,3 +1,30 @@
 #!/usr/bin/env bash
 
+# Check for apkg-update subcommand
+if [[ "$1" == "apkg-update" ]]; then
+    # Check if running as root
+    if [[ "$EUID" -ne 0 ]]; then
+        echo "Error: apkg-update must be run with sudo."
+        exit 1
+    fi
+
+    echo "Updating apkg..."
+
+    # Remove existing directory
+    rm -rf /opt/apkg || {
+        echo "Failed to remove /opt/apkg"
+        exit 1
+    }
+
+    # Clone repository
+    git clone https://github.com/getapkg/apkg.git /opt/apkg || {
+        echo "Failed to clone apkg repository"
+        exit 1
+    }
+
+    echo "apkg successfully updated."
+    exit 0
+fi
+
+# Default behavior
 python3 main.py "$@"
