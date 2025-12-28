@@ -1,5 +1,17 @@
 #!/usr/bin/python3
 
+# + ---------------------------------------------+
+# (C) APKG Contributors 2025-2026
+#     APKG-Client
+# + ---------------------------------------------+
+
+#
+# This code sucks, you know it and I know it.
+# Move on and call me an idiot later.
+# P.S. please do not take the bincode treatment
+# on me for this code, if you do -- there's no reason
+# for me to live then like it is already
+#                                         - OptimiDev
 import os
 import sys
 import colorama
