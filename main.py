@@ -60,7 +60,7 @@ remove_parser.add_argument("package", help="Name of the package to remove")
 update_parser = subparsers.add_parser("update", help="Update a package")
 update_parser.add_argument("package", help="Name of the package to update")
 
-#idk if this works
+#idk if this works --elemental
 reinstall_parser = subparsers.add_parser("reinstall", help="Reinstall a package")
 reinstall_parser.add_argument("package", help="Name of the package to reinstall")
 
@@ -80,6 +80,6 @@ if args.command == "remove":
 if args.command == "update":
     reinstall(args.package)
 
-#idk if this works
+#idk if this works --elemental
 if args.command == "reinstall":
     reinstall(args.package)
